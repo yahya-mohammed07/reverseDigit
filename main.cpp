@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include  <chrono>
-int main()
+auto main() -> int
 {
     auto start = std::chrono::high_resolution_clock::now();
     unsigned long long  digits = 958398779;
@@ -13,9 +13,9 @@ int main()
     }
     for (int i : result)
     {
-        std::cout<<" :"<<i<<": ";      
+        std::cout<<" :"<<i<<": ";
     }
     auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration (end - start);
-	std::cout<<"\n-time lapse in s: "<<duration.count()<<" "<<std::endl;
+    std::chrono::duration<float> duration (end - start);
+	std::cout<<"\n-time lapse in s: "<<duration.count() * 1000<<" "<<std::endl;
 }
